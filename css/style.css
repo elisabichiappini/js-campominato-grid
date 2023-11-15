@@ -14,15 +14,120 @@ reset
 }
 
 /*
+variabili
+*/
+
+:root {
+    --bg-color: #7fffd4;
+}
+
+/*
 common
 */
 
 body {
-    background-color: antiquewhite;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
+#topbar {
+    height: 120px;
+}
 
+#bottom {
+    height: 80px;
+}
+
+#board {
+    text-align: center;
+    height: calc(100vh - 200px);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.image {
+    width: 60px;
+    display: block;
+}
+
+#top-left,
+#top-right {
+    padding: 0 20px;
+}
+
+.btn {
+    padding: 0 40px;
+}
+
+.top-left .container > h1 {
+    font: 50px;
+}
+
+h1 {
+    font-size: 30px;
+    vertical-align: middle;
+}
+
+.link {
+    color: rgb(35, 8, 85);
+}
+
+#bottom > span i {
+    font-size: 10px;
+}
 /*
 utilites
 */
 
+.d-flex {
+    display: flex;
+}
+
+.space-btw {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.g-20 {
+    gap: 20px;
+}
+
+.py-20 {
+    padding: 20px;
+}
+/*
+debug
+*/
+
+.debug #topbar {
+    background-color: rgb(64, 64, 213);
+    border: 1px dashed rgb(221, 221, 5);
+}
+
+.debug #board {
+    background-color: rgb(245, 165, 245);
+}
+
+.debug #bottom {
+    background-color: #13ad7a;
+    border: 1px dashed rgb(255, 255, 255);
+}
+
+.debug #top-left,
+.debug #top-right {
+    background-color: rgb(220, 220, 89);
+    border: 1px dashed rgb(0, 0, 0);
+}
+
+.debug .container {
+    background-color: gray;
+    border: 1px dashed rgb(255, 255, 255);
+}
