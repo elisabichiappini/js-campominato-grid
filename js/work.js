@@ -2,7 +2,6 @@
 FILE JAVASCRIPT
 
 ***************************************************************/
-
 'use strict';
 // Programma:
 // 1- Struttura gioco inizializzata HTML e Css (Header e Footer);
@@ -26,46 +25,64 @@ FILE JAVASCRIPT
 // - Se gamer clicca su bottonePlay allora campoMinato add classe active;
 // - Se gamer clicca su cellaCampo, allora cellaCampo cambia colore (azzurro) + stampo in console numero cellaCampo su cui ho cliccato.
 
-//                          FUNCTIONS
 
-// generatore elementi in DOM
+//                          FUNCTIONS
+//funzione per creare elementi in DOM (tag, className, content)
 function generatoreElementiDom (tag, className, content) {
+
     const elementoDom = document.createElement(tag);
     elementoDom.classList.add(className);
     elementoDom.append(content);
     return elementoDom;
 }
 
-// campominato
+//funzione per innesto di creazione della tavola gioco al click, perchè in operations viene richiamata la funzione in evento
 function campoMinato () {
     console.log(textPlay);
     textPlay.classList.add('d-none');
+
+    // controllo che clicco
     console.log('ho cliccato play');
+    // creo ciclo for in cui richiarmo la fuzione per la creazione degli elementi cella
     for(let i = 1; i <= celleLivello1; i++) {
-        //invocata funzione (generatore elementi in DOM) in altra funzione
+        // invoco la funzione generatoreElementiDom con argomenti
         const myElementDom = generatoreElementiDom('div', 'cella', i);
+
+
+
+
+        // appendo all'elemento box contenitore in DOM i miei elementi cella creati
         boxCelle.append(myElementDom);
-    };
+        };
 };
+
 
 //                          OPERATIONS
 
-//Global scope
-
-const celleLivello1 = 100;
-
-
 // Js e Dom
+// dichiaro e assegno valore a variabile di appoggio in DOM per griglia
 const gridGame = document.getElementById('bottom-board');
-
+// dichiaro e assegno valore a variabile di box contenitore della griglia
 const boxCelle = document.createElement('div');
-
+// attribuisco le classi che ho in CSS all'elemento box contentiore della griglia
+boxCelle.classList.add('box-celle','d-flex', 'flex-wrap', 'text-center', 'align-start');
+// controllo che vengano attribuite le classi
+console.log(boxCelle);
+// appendo il box contenitore della griglia all'elemento già presente in DOM
+gridGame.append(boxCelle);
+// dichiaro e assegno valore a variabile per l'elemento bottonePlay
 const elementButtonActive = document.querySelector('input.btn');
+console.log(elementButtonActive);
 
+// text-play
 const textPlay = document.querySelector('.play-text');
 
-boxCelle.classList.add('box-celle','d-flex', 'flex-wrap', 'text-center', 'align-start');
+// costante a scopo globale per indicare un livello (in previsione di altri livelli)
+const celleLivello1 = 100;
 
-gridGame.append(boxCelle);
-
+// click su bottone, avvia anche la funzione perchè richiamata senza parentesi, quindi rieseguita (inception)
 elementButtonActive.addEventListener('click', campoMinato);
+
+- 
+-
+-
