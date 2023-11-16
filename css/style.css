@@ -4,7 +4,7 @@ FILE CSS
 
 
 /*
-reset
+-------------------reset-------------------
 */
 
 * {
@@ -14,7 +14,7 @@ reset
 }
 
 /*
-variabili
+-------------------variabili-------------------
 */
 
 :root {
@@ -22,7 +22,7 @@ variabili
 }
 
 /*
-common
+-------------------common-------------------
 */
 
 body {
@@ -30,19 +30,23 @@ body {
     height: 100vh;
     font-family: 'Kanit', sans-serif;
     font-family: 'Montserrat', sans-serif;
+
 }
 
 #topbar {
     height: 120px;
+    width: 100%;
 }
 
 #bottom {
     height: 80px;
+    width: 100%;
 }
 
 #board {
-    text-align: center;
     height: calc(100vh - 200px);
+    background-color: var(--bg-color);
+    width: 100%;
 }
 
 .container {
@@ -64,8 +68,33 @@ body {
     padding: 0 40px;
 }
 
-.top-left .container > h1 {
-    font: 50px;
+.link {
+    color: rgb(35, 8, 85);
+}
+
+.box-celle {
+    height: 77vh;
+    width: 77vh;
+    margin: 0 auto;
+}
+
+.box-celle > .cella {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+}
+
+.logo {
+    vertical-align: middle;
+}
+
+/*
+-------------------typography-------------------
+*/
+
+body {
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
@@ -73,16 +102,21 @@ h1 {
     vertical-align: middle;
 }
 
-.link {
-    color: rgb(35, 8, 85);
+h2 {
+    padding: 0 0 20px;
 }
 
 #bottom > span i {
     font-size: 10px;
 }
+
 /*
-utilites
+-------------------utilites-------------------
 */
+
+.text-center {
+    text-align: center;
+}
 
 .d-flex {
     display: flex;
@@ -103,8 +137,17 @@ utilites
 .py-20 {
     padding: 20px;
 }
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.align-start {
+   align-content: flex-start;
+}
+
 /*
-debug
+-------------------debug-------------------
 */
 
 .debug #topbar {
@@ -130,4 +173,19 @@ debug
 .debug .container {
     background-color: gray;
     border: 1px dashed rgb(255, 255, 255);
+}
+
+.debug #grid-game {
+    background-color: antiquewhite;
+    border: 1px dashed rgb(255, 255, 255);
+}
+
+.debug .box-celle {
+    background-color: rgb(209, 36, 36);
+    border: 1px dashed rgb(0, 0, 0);
+}
+
+.debug .box-celle > .cella {
+    background-color:rgb(222, 111, 111);
+    border: 1px dashed white;
 }
