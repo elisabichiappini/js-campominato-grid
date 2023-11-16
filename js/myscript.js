@@ -27,11 +27,25 @@ FILE JAVASCRIPT
 //                          FUNCTIONS
 //funzione per creare elementi in DOM
 function generatoreElementiDom (tag, className, content) {
-    const elementDom = document.createElement(tag);
-    elementDom.classList.add(className);
-    elementDom.append(content);
-    return elementDom;
+    const elementoDom = document.createElement(tag);
+    elementoDom.classList.add(className);
+    elementoDom.append(content);
+    return elementoDom;
 }
+
+//funzione per innesto di creazione della tavola gioco al click, perchè in operations viene richiamata la funzione in evento
+function campoMinato () {
+    // controllo che clicco
+    console.log('ho cliccato play');
+    // creo ciclo for in cui richiarmo la fuzione per la creazione degli elementi cella
+for(let i = 1; i <= celleLivello1; i++) {
+    // invoco la funzione generatoreElementiDom con argomenti
+    const myElementDom = generatoreElementiDom('div', 'cella', i);
+    // appendo all'elemento box contenitore in DOM i miei elementi cella creati
+    boxCelle.append(myElementDom);
+    };
+};
+
 
 //                          OPERATIONS
 
@@ -47,15 +61,11 @@ console.log(boxCelle);
 // appendo il box contenitore della griglia all'elemento già presente in DOM
 gridGame.append(boxCelle);
 // dichiaro e assegno valore a variabile per l'elemento bottonePlay
-const playGame = document.querySelector('input.btn');
-console.log(playGame);
+const elementButtonActive = document.querySelector('input.btn');
+console.log(elementButtonActive);
 
 // costante a scopo globale per indicare un livello (in previsione di altri livelli)
 const celleLivello1 = 100;
-// creo ciclo for in cui richiarmo la fuzione per la creazione degli elementi cella
-for(let i = 1; i <= celleLivello1; i++) {
-    // invoco la funzione generatoreElementiDom con argomenti
-    const myElementDom = generatoreElementiDom('div', 'cella', i);
-    // appendo all'elemento box contenitore in DOM i miei elementi cella creati
-    boxCelle.append(myElementDom);
-};
+
+// click su bottone, avvia anche la funzione perchè richiamata senza parentesi, quindi rieseguita (inception)
+elementButtonActive.addEventListener('click', campoMinato);
