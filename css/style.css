@@ -32,11 +32,6 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-#grid-game {
-    /* il contenitore magia il contenuto */
-    overflow: hidden;
-}
-
 #topbar {
     height: 120px;
     width: 100%;
@@ -56,6 +51,13 @@ body {
     /* scroll bar */
     overflow: auto;
 }
+
+
+#grid-game {
+    /* il contenitore magia il contenuto */
+    overflow: hidden;
+}
+
 
 .container {
     max-width: 1000px;
@@ -84,6 +86,7 @@ body {
     height: 77vh;
     width: 77vh;
     margin: 0 auto;
+    display: none;
 }
 
 .box-celle > .cella {
@@ -151,11 +154,11 @@ h2 {
 }
 
 .align-start {
-   align-content: flex-start;
+   align-items: flex-start;
 }
 
-.hidden {
-    display: none;
+.active {
+    display: block;
 }
 
 /*
