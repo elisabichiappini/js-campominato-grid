@@ -45,13 +45,18 @@ function campoMinato () {
         //invocata funzione (generatore elementi in DOM) in altra funzione
         const myElementDom = generatoreElementiDom('div', 'cella', i);
         boxCelle.append(myElementDom);
+        myElementDom.addEventListener('click', 
+        function() {
+            myElementDom.classList.add('blu')
+            console.log(i);
+        })
     };
 };
+
 
 //                          OPERATIONS
 
 //Global scope
-
 const celleLivello1 = 100;
 
 
@@ -60,7 +65,9 @@ const gridGame = document.getElementById('bottom-board');
 
 const boxCelle = document.createElement('div');
 
-const elementButtonActive = document.querySelector('input.btn');
+const playButton = document.querySelector('input.play');
+
+const resetButton = document.querySelector('input.reset');
 
 const textPlay = document.querySelector('.play-text');
 
@@ -68,4 +75,4 @@ boxCelle.classList.add('box-celle','d-flex', 'flex-wrap', 'text-center', 'align-
 
 gridGame.append(boxCelle);
 
-elementButtonActive.addEventListener('click', campoMinato);
+playButton.addEventListener('click', campoMinato);

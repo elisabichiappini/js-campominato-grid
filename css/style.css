@@ -62,7 +62,6 @@ body {
     overflow: hidden;
 }
 
-
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -78,7 +77,8 @@ body {
     padding: 0 20px;
 }
 
-.btn {
+.play,
+.reset {
     padding: 0 40px;
 }
 
@@ -104,8 +104,13 @@ body {
 }
 
 .play-text > em{
-    color:rgb(188, 187, 187);
+    color:rgb(186, 186, 186);
 }
+
+.blu {
+    background-color: blue;
+}
+
 /*
 -------------------typography-------------------
 */
