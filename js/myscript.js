@@ -46,6 +46,9 @@ boxCelle.classList.add('box-celle','d-flex', 'flex-wrap', 'text-center', 'align-
 console.log(boxCelle);
 // appendo il box contenitore della griglia all'elemento già presente in DOM
 gridGame.append(boxCelle);
+// dichiaro e assegno valore a variabile per l'elemento bottonePlay
+const playGame = document.querySelector('input.btn');
+console.log(playGame);
 
 // costante a scopo globale per indicare un livello (in previsione di altri livelli)
 const celleLivello1 = 100;

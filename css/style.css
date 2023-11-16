@@ -32,6 +32,11 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+#grid-game {
+    /* il contenitore magia il contenuto */
+    overflow: hidden;
+}
+
 #topbar {
     height: 120px;
     width: 100%;
@@ -40,12 +45,16 @@ body {
 #bottom {
     height: 80px;
     width: 100%;
+    position: fixed;
+    z-index: 99;
 }
 
 #board {
     height: calc(100vh - 200px);
     background-color: var(--bg-color);
     width: 100%;
+    /* scroll bar */
+    overflow: auto;
 }
 
 .container {
@@ -143,6 +152,10 @@ h2 {
 
 .align-start {
    align-content: flex-start;
+}
+
+.hidden {
+    display: none;
 }
 
 /*
